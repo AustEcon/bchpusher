@@ -26,7 +26,7 @@ example useage
 --------------
 >>> import bitcash
 >>> my_key_main = bitcash.PrivateKey("Kymh9idW5bdM7n7dHvL1DPW6od9J8tFR7kgHMpGLhUcxU8Q1UGQY")
->>> bitcash.bitpusher.bchpush(my_key_main, [('6d01', 'hex'), ('new_name', 'utf-8')])
+>>> bitcash.bchpusher.bchpush(my_key_main, [('6d01', 'hex'), ('new_name', 'utf-8')])
 
 as per memo.cash protocol @ https://memo.cash/protocol this results in a "Set name" action to "new_name"
 
@@ -54,9 +54,9 @@ Add easy interface with popular industry standards and protocols such as:
 
 bitpuller
 ---------
-* easy-to-use bitDB query API for python synergising well with bitpusher
+* easy-to-use bitDB query API for python synergising well with bchpusher
 * open source, google-like, block-chain search engine
-* complementary counterpart to bitpusher
+* complementary counterpart to bchpusher
 
 Manual method (see below)
 -------------------------
@@ -75,7 +75,7 @@ Manual method (see below)
 
 >>> my_key = bitcash.PrivateKey('WIF Compressed (base58) here')
 >>> my_key.get_unspents() #necessary step --> updates my_key.unspents object variable
->>> lst_of_pushdata =  [('6d01', 'hex'), ('bitPUSHER', 'utf-8')]
+>>> lst_of_pushdata =  [('6d01', 'hex'), ('bchpusher', 'utf-8')]
 >>> pushdata = bitcash.bchpusher.create_pushdata(lst_of_pushdata)
 >>> rawtx = my_key.create_transaction([(my_key.address, 0.0001, 'bch')], fee=1, message=pushdata, bytes=True)
 >>> bitcash.network.services.NetworkAPI.broadcast_tx(rawtx)
