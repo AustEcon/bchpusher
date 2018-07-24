@@ -1,3 +1,6 @@
+import bchpusher
+
+
 '''
 Simple API for interacting with the memo.cash OP_RETURN protocol
 '''

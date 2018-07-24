@@ -1,7 +1,7 @@
 from bitcash import utils
 from bitcash.network.services import NetworkAPI
-from bitcash.bchpusher import memo
-from bitcash.bchpusher import blockpress
+from bchpusher import memo
+from bchpusher import blockpress
 
 
 def create_pushdata(lst_of_pushdata):
@@ -87,8 +87,8 @@ def rawtx(PrivateKey, lst_of_pushdata, fee=1):
 
     PrivateKey.get_unspents()
     pushdata = create_pushdata(lst_of_pushdata)
-    rawtx = PrivateKey.create_transaction(
-        [(PrivateKey.address, 0.0001, 'bch')], fee=1, message=pushdata, custom_pushdata=True)
+    rawtx = PrivateKey.create_transaction([], fee=1, message=pushdata, custom_pushdata=True)
+
     return rawtx
 
 
@@ -116,7 +116,6 @@ def bitpush(PrivateKey, lst_of_pushdata, fee=1):
 
     PrivateKey.get_unspents()
     pushdata = create_pushdata(lst_of_pushdata)
-    rawtx = PrivateKey.create_transaction(
-        [(PrivateKey.address, 0.0001, 'bch')], fee=1, message=pushdata, custom_pushdata=True)
+    rawtx = PrivateKey.create_transaction([], fee=1, message=pushdata, custom_pushdata=True)
 
     return NetworkAPI.broadcast_tx(rawtx)
