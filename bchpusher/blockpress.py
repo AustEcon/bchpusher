@@ -29,14 +29,14 @@ def set_name(PrivateKey, new_name, fee=2):
     param: new_name(77 bytes)'''
 
     lst_of_pushdata = [(BLOCKPRESS_SET_NAME, 'hex'), (new_name, 'utf-8')]
-    return bchpusher.bitpush(PrivateKey, lst_of_pushdata, fee=fee)
+    return bchpusher.bchpush(PrivateKey, lst_of_pushdata, fee=fee)
 
 
 def create_text_post(PrivateKey, text, fee=2):
     # Sets name of blockpress.com account to new_name
     # text(217) (upgraded from 77 bytes)
     lst_of_pushdata = [(BLOCKPRESS_CREATE_TEXT_POST, 'hex'), (text, 'utf-8')]
-    return bchpusher.bitpush(PrivateKey, lst_of_pushdata, fee=fee)
+    return bchpusher.bchpush(PrivateKey, lst_of_pushdata, fee=fee)
 
 
 def reply_to_posts(PrivateKey, txhash, text, fee=2):
@@ -44,7 +44,7 @@ def reply_to_posts(PrivateKey, txhash, text, fee=2):
     # txhash(32) Text (184 bytes)
     lst_of_pushdata = [(BLOCKPRESS_SET_NAME, 'hex'),
                        (txhash, 'hex'), (text, 'utf-8')]
-    return bchpusher.bitpush(PrivateKey, lst_of_pushdata, fee=fee)
+    return bchpusher.bchpush(PrivateKey, lst_of_pushdata, fee=fee)
 
 
 """

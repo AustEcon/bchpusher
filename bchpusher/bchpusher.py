@@ -57,7 +57,6 @@ def create_pushdata(lst_of_pushdata):
 
 '''
 
-
     pushdata = b''
 
     for i in range(len(lst_of_pushdata)):
@@ -82,7 +81,7 @@ def create_pushdata(lst_of_pushdata):
     return pushdata
 
 
-def rawtx(PrivateKey, lst_of_pushdata, fee=2):
+def rawtx(PrivateKey, lst_of_pushdata, fee=1):
     '''creates a rawtx with OP_RETURN metadata
 
     Parameters
@@ -105,7 +104,7 @@ def rawtx(PrivateKey, lst_of_pushdata, fee=2):
     return rawtx
 
 
-def bitpush(PrivateKey, lst_of_pushdata, fee=2):
+def bchpush(PrivateKey, lst_of_pushdata, fee=1):
     '''
     All-in-one function for generating a rawtx with desired OP_RETURN metadata and broadcasting it to the blockchain
 
@@ -124,7 +123,7 @@ def bitpush(PrivateKey, lst_of_pushdata, fee=2):
     Examples
     --------
     lst_of_pushdata = [('6d01','hex'), ('my_new_memocash_name', 'utf-8')]
-    bitpush(my_key, lst_of_pushdata)
+    bchpush(my_key, lst_of_pushdata)
     '''
 
     PrivateKey.get_unspents()

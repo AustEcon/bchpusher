@@ -26,14 +26,14 @@ def set_name(PrivateKey, new_name, fee=2):
     # Sets name of memo.cash account to new_name
     # name(217)
     lst_of_pushdata = [(ACTION_SET_NAME, 'hex'), (new_name, 'utf-8')]
-    return bchpusher.bitpush(PrivateKey, lst_of_pushdata, fee=fee)
+    return bchpusher.bchpush(PrivateKey, lst_of_pushdata, fee=fee)
 
 
 def post(PrivateKey, post, fee=2):
     # Posts on memo.cash account
     # message(217)
     lst_of_pushdata = [(ACTION_POST, 'hex'), (post, 'utf-8')]
-    return bchpusher.bitpush(PrivateKey, lst_of_pushdata, fee=fee)
+    return bchpusher.bchpush(PrivateKey, lst_of_pushdata, fee=fee)
 
 
 def reply(PrivateKey, tx_hash, reply, fee=2):
@@ -41,7 +41,7 @@ def reply(PrivateKey, tx_hash, reply, fee=2):
     # txhash(30), message(184)
     lst_of_pushdata = [(ACTION_REPLY, 'hex'),
                        (tx_hash, 'hex'), (reply, 'utf-8')]
-    return bchpusher.bitpush(PrivateKey, lst_of_pushdata, fee=fee)
+    return bchpusher.bchpush(PrivateKey, lst_of_pushdata, fee=fee)
 
 
 '''
@@ -51,7 +51,7 @@ def like_or_tip(PrivateKey, tx_hash, tip, fee=2):
     # Sends a tip on memo.cash account
     # txhash(30)
     lst_of_pushdata = [(ACTION_LIKE_OR_TIP, 'hex'), (tx_hash, 'hex'), (tip, 'utf-8')]
-    return bchpusher.bitpush(PrivateKey, lst_of_pushdata, fee=2)'''
+    return bchpusher.bchpush(PrivateKey, lst_of_pushdata, fee=2)'''
 
 
 def set_profile_text(PrivateKey, profile_text, fee=2):
@@ -59,21 +59,21 @@ def set_profile_text(PrivateKey, profile_text, fee=2):
     # message(217)
     lst_of_pushdata = [(ACTION_SET_PROFILE_TEXT, 'hex'),
                        (profile_text, 'utf-8')]
-    return bchpusher.bitpush(PrivateKey, lst_of_pushdata, fee=fee)
+    return bchpusher.bchpush(PrivateKey, lst_of_pushdata, fee=fee)
 
 
 def follow_user(PrivateKey, address, fee=2):
     # Sets profile text on memo.cash account
     # address(35)
     lst_of_pushdata = [(ACTION_FOLLOW_USER, 'hex'), (address, 'utf-8')]
-    return bchpusher.bitpush(PrivateKey, lst_of_pushdata, fee=fee)
+    return bchpusher.bchpush(PrivateKey, lst_of_pushdata, fee=fee)
 
 
 def unfollow_user(PrivateKey, address, fee=2):
     # Sets profile text on memo.cash account
     # address(35)
     lst_of_pushdata = [(ACTION_UNFOLLOW_USER, 'hex'), (address, 'utf-8')]
-    return bchpusher.bitpush(PrivateKey, lst_of_pushdata, fee=fee)
+    return bchpusher.bchpush(PrivateKey, lst_of_pushdata, fee=fee)
 
 
 def set_profile_picture(PrivateKey, picture_url, fee=2):
@@ -81,7 +81,7 @@ def set_profile_picture(PrivateKey, picture_url, fee=2):
     # url(217)
     lst_of_pushdata = [(ACTION_SET_PROFILE_PICTURE, 'hex'),
                        (picture_url, 'utf-8')]
-    return bchpusher.bitpush(PrivateKey, lst_of_pushdata, fee=fee)
+    return bchpusher.bchpush(PrivateKey, lst_of_pushdata, fee=fee)
 
 
 '''
@@ -91,7 +91,7 @@ def repost_memo(PrivateKey, memo, fee=2):
     # Sets profile text on memo.cash account
     # txhash(30), message(184)
     lst_of_pushdata = [(ACTION_REPOST_MEMO, 'hex'), (memo, 'utf-8')]
-    return bchpusher.bitpush(PrivateKey, lst_of_pushdata, fee=2)'''
+    return bchpusher.bchpush(PrivateKey, lst_of_pushdata, fee=2)'''
 
 
 def post_topic_message(PrivateKey, topic_name, message, fee=2):
@@ -99,21 +99,21 @@ def post_topic_message(PrivateKey, topic_name, message, fee=2):
     # topic_name(variable), message(214 - topic length)
     lst_of_pushdata = [(ACTION_POST_TOPIC_MESSAGE, 'hex'),
                        (topic_name, 'utf-8'), (message, 'utf-8')]
-    return bchpusher.bitpush(PrivateKey, lst_of_pushdata, fee=fee)
+    return bchpusher.bchpush(PrivateKey, lst_of_pushdata, fee=fee)
 
 
 def topic_follow(PrivateKey, topic_name, fee=2):
     # Sets profile text on memo.cash account
     # topic_name(variable)
     lst_of_pushdata = [(ACTION_TOPIC_FOLLOW, 'hex'), (topic_name, 'utf-8')]
-    return bchpusher.bitpush(PrivateKey, lst_of_pushdata, fee=fee)
+    return bchpusher.bchpush(PrivateKey, lst_of_pushdata, fee=fee)
 
 
 def topic_unfollow(PrivateKey, topic_name, fee=2):
     # Sets profile text on memo.cash account
     # topic_name(variable)
     lst_of_pushdata = [(ACTION_TOPIC_UNFOLLOW, 'hex'), (topic_name, 'utf-8')]
-    return bchpusher.bitpush(PrivateKey, lst_of_pushdata, fee=fee)
+    return bchpusher.bchpush(PrivateKey, lst_of_pushdata, fee=fee)
 
 
 '''
@@ -123,7 +123,7 @@ def create_poll(PrivateKey, poll_type, option_count, question, fee=2):
     # Sets profile text on memo.cash account
     # poll_type(1), option_count(1), question(209)
     lst_of_pushdata = [(ACTION_TOPIC_UNFOLLOW, 'hex'), (poll_type, 'hex'), (option_count, 'hex'), (question, 'utf-8')]
-    return bchpusher.bitpush(PrivateKey, lst_of_pushdata, fee=2)'''
+    return bchpusher.bchpush(PrivateKey, lst_of_pushdata, fee=2)'''
 
 '''
 # FIXME: Not ready yet
@@ -132,7 +132,7 @@ def add_poll_option(PrivateKey, poll_tx_hash, option, fee=2):
     # Sets profile text on memo.cash account
     # poll_txhash(30), option(184)
     lst_of_pushdata = [(ACTION_TOPIC_UNFOLLOW, 'hex'), (poll_tx_hash, 'hex'), (option, 'utf-8')]
-    return bchpusher.bitpush(PrivateKey, lst_of_pushdata, fee=2)'''
+    return bchpusher.bchpush(PrivateKey, lst_of_pushdata, fee=2)'''
 
 '''
 # FIXME: Not ready yet
@@ -141,4 +141,4 @@ def poll_vote(PrivateKey, poll_tx_hash, comment, fee=2):
     # Sets profile text on memo.cash account
     # poll_txhash(30), comment(184)
     lst_of_pushdata = [(ACTION_TOPIC_UNFOLLOW, 'hex'), (poll_tx_hash, 'hex'), (comment, 'utf-8')]
-    return bchpusher.bitpush(PrivateKey, lst_of_pushdata, fee=2)'''
+    return bchpusher.bchpush(PrivateKey, lst_of_pushdata, fee=2)'''
