@@ -81,7 +81,7 @@ def create_pushdata(lst_of_pushdata):
     return pushdata
 
 
-def rawtx(PrivateKey, lst_of_pushdata, fee=1):
+def rawtx(PrivateKey, lst_of_pushdata, fee=2):
     '''creates a rawtx with OP_RETURN metadata
 
     Parameters
@@ -104,7 +104,7 @@ def rawtx(PrivateKey, lst_of_pushdata, fee=1):
     return rawtx
 
 
-def bchpush(PrivateKey, lst_of_pushdata, fee=1):
+def bchpush(PrivateKey, lst_of_pushdata, fee=2):
     '''
     All-in-one function for generating a rawtx with desired OP_RETURN metadata and broadcasting it to the blockchain
 
