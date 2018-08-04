@@ -1,3 +1,12 @@
+Status Update
+==============
+1) Please be advised that this project is in the very early stages. (not even at v0.1 yet!)
+2) Bitcash https://github.com/sporestack/bitcash is now satisfactory for the backend to bchpusher to move forward but until the next release of bitcash, you will need to git clone / copy and paste the latest copy of bitcash into your Lib/site-packages folder (or copy it overtop of the old one - not the whole repo just the bitcash folder!). New release coming soon though. 
+3) Bchpusher now works for the main basic functions provided you have performed step 2 (get latest bitcash from repo). To get bchpusher working (in its current state) you will need to clone / copy and paste the bchpusher folder directly into your Lib/site-packages folder. It will probably be a little while (i.e. a few weeks or more) before I put together a pypi // pip3 installer for ease of access.
+4) In the meantime. If you are using this project. Feel free to report any issues / bugs / suggestions / questions / pull requests etc. This is all valuable feedback. I will generally reply within about 6 hours.
+
+------------------------------------------------------------------------------------------------------------------------------
+
 bchpusher
 =========
 Aims to be a comprehensive solution for:
